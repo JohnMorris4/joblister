@@ -21,12 +21,13 @@
             </form>
 
           </div>
+          <h3><?php echo $title; ?></h3>
           <?php foreach($jobs as $job): ?>
           <div class="row">
             <div class="col-md-10">
               <h2><?php echo $job->job_title; ?></h2>
               <p><?php echo $job->description; ?></p>
-              <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-primary" href="job.php?<?php echo $job->id; ?>" role="button">View details &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
           </div><!--/row-->
           <?php endforeach; ?>
