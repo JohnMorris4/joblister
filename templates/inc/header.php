@@ -1,30 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
-	<link href="css/offcanvas.css" rel="stylesheet">
+	<title>JobLister</title>
+	<link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
-	<title><?php echo SITE_TITLE; ?></title>
 </head>
 <body>
-	<nav class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><?php echo SITE_TITLE; ?></a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li ><a href="">Home</a></li>
-            <li><a href="">Create Listing</a></li>
-            
+	<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="index.php">Home</a></li>
+            <li role="presentation"><a href="create.php">Create Listing</a></li>
           </ul>
-        </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-    </nav><!-- /.navbar -->
+        </nav>
+        <h3 class="text-muted"><?php echo SITE_TITLE; ?></h3>
+      </div>
+      <?php displayMessage(); ?>

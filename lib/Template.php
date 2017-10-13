@@ -1,19 +1,20 @@
 <?php class Template{
-	//path to Template
-
+	// Path To Template
 	protected $template;
-	protected $vars=array();
+	// Vars Passed In
+	protected $vars = array();
 
+	// Constructor
 	public function __construct($template){
-			$this->template = $template;
+		$this->template = $template;
 	}
 
 	public function __get($key){
-			return $this->vars[$key];
+		return $this->vars[$key];
 	}
 
 	public function __set($key, $value){
-		$this->vars[$key]=$value;
+		$this->vars[$key] = $value;
 	}
 
 	public function __toString(){

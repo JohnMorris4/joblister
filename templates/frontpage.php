@@ -1,43 +1,31 @@
 <?php include 'inc/header.php'; ?>
-
-<div class="container">
-
-      <div class="row row-offcanvas row-offcanvas-right">
-
-        <div class="col-xs-12 col-sm-9 col-sm-offset-2">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div class="jumbotron">
-            <h1>Find A Job</h1>
-            <form action="index.php" method="GET">
-              <select name="category" id="" class="form-control">
+<div class="col-md-10 col-md-offset-1">
+      <div class="jumbotron">
+        <h1>Find A Job</h1>
+        <form method="GET" action="index.php">
+            <select name="category" class="form-control">
                 <option value="0">Choose Category</option>
                 <?php foreach($categories as $category): ?>
-                  <option value="<?php echo $category->id; ?>"><?php echo $category->name ?></option>
+                    <option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
                 <?php endforeach; ?>
-              </select>
-              <input type="submit" class="btn btn-lg btn-primary" value="FIND">
-            </form>
-
-          </div>
-          <h3><?php echo $title; ?></h3>
-          <?php foreach($jobs as $job): ?>
-          <div class="row">
-            <div class="col-md-10">
-              <h2><?php echo $job->job_title; ?></h2>
-              <p><?php echo $job->description; ?></p>
-              <p><a class="btn btn-primary" href="job.php?<?php echo $job->id; ?>" role="button">View details &raquo;</a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-          </div><!--/row-->
-          <?php endforeach; ?>
-        </div><!--/.col-xs-12.col-sm-9-->
-          
-
-      </div><!--/row-->
-
-      <hr>
-
-
+            </select>
+            <br>
+            <input type="submit" class="btn btn-lg btn-success" value="FIND">
+        </form>
+      </div>
+        <h3><?php echo $title; ?></h3>
+      	<?php foreach($jobs as $job): ?>
+      	<div class="row marketing">
+	        <div class="col-md-10">
+	          <h4><?php echo $job->job_title; ?></h4>
+	          <p><?php echo $job->description; ?></p>     
+	        </div>
+	        <div class="col-md-2">
+	        		<a class="btn btn-default" href="job.php?id=<?php echo $job->id; ?>">View</a>
+	        </div>
+        </div>  
+        <?php endforeach; ?>  
+          <br>
+          <br> 
 
 <?php include 'inc/footer.php'; ?>
